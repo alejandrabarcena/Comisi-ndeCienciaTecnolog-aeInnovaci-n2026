@@ -1,0 +1,1433 @@
+<!DOCTYPE html>
+<html lang="es" class="h-full">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Comisión de Ciencia, Tecnología e Innovación</title>
+    <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
+    <script src="/_sdk/element_sdk.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&amp;family=Manrope:wght@400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        margin: 0;
+        background: #e8dcc9;
+        color: #111111;
+        font-family: "Manrope", sans-serif;
+      }
+      .display-font {
+        font-family: "Cormorant Garamond", serif;
+      }
+      .paper-grain {
+        background-image: radial-gradient(
+            circle at 20% 20%,
+            rgba(17, 17, 17, 0.04) 0,
+            rgba(17, 17, 17, 0.04) 1px,
+            transparent 1px
+          ),
+          radial-gradient(
+            circle at 80% 30%,
+            rgba(17, 17, 17, 0.03) 0,
+            rgba(17, 17, 17, 0.03) 1px,
+            transparent 1px
+          ),
+          radial-gradient(
+            circle at 50% 80%,
+            rgba(17, 17, 17, 0.03) 0,
+            rgba(17, 17, 17, 0.03) 1px,
+            transparent 1px
+          ),
+          linear-gradient(
+            180deg,
+            rgba(255, 255, 255, 0.18),
+            rgba(255, 255, 255, 0.04)
+          );
+        background-size: 26px 26px, 32px 32px, 22px 22px, 100% 100%;
+      }
+      .reveal {
+        opacity: 0;
+        transform: translateY(18px);
+        animation: riseIn 0.9s ease forwards;
+      }
+      .delay-1 {
+        animation-delay: 0.12s;
+      }
+      .delay-2 {
+        animation-delay: 0.24s;
+      }
+      .delay-3 {
+        animation-delay: 0.36s;
+      }
+      .delay-4 {
+        animation-delay: 0.48s;
+      }
+      .delay-5 {
+        animation-delay: 0.6s;
+      }
+
+      @keyframes riseIn {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .outline-line {
+        position: relative;
+      }
+      .outline-line::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -10px;
+        width: 72px;
+        height: 1px;
+        background: currentColor;
+        opacity: 0.7;
+      }
+
+      .soft-card {
+        background: rgba(255, 255, 255, 0.22);
+        backdrop-filter: blur(4px);
+        border: 1px solid rgba(17, 17, 17, 0.12);
+        box-shadow: 0 10px 40px rgba(17, 17, 17, 0.06);
+      }
+
+      .number-mark {
+        -webkit-text-stroke: 1px rgba(17, 17, 17, 0.18);
+        color: transparent;
+        line-height: 1;
+      }
+    </style>
+    <style>
+      body {
+        box-sizing: border-box;
+      }
+    </style>
+    <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+  </head>
+  <body class="h-full">
+    <div id="app" class="h-full w-full overflow-auto paper-grain">
+      <header
+        class="w-full border-b border-black/10 bg-white/15 backdrop-filter backdrop-blur-sm"
+      >
+        <div
+          class="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 py-6 sm:py-8 md:py-10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6"
+        >
+          <div class="flex-shrink-0 flex-1 sm:flex-1">
+            <img
+              src="https://raw.githubusercontent.com/alejandrabarcena/cosmicplush/refs/heads/main/consejo%20logo.png"
+              alt="Logo Consejo Nacional de Mujeres Empresarias"
+              class="h-16 sm:h-20 md:h-24 w-auto object-contain"
+              loading="lazy"
+              onerror="console.error('Logo failed to load:', this.src); this.style.background='#e5e7eb'; this.alt='Logo unavailable';"
+            />
+          </div>
+          <a
+            href="#talleres"
+            class="rounded-full border border-black px-4 sm:px-5 py-2.5 sm:py-3 text-xs sm:text-sm font-semibold hover:bg-black hover:text-[#e8dcc9] transition-colors focus:outline-none focus:ring-2 focus:ring-black whitespace-nowrap"
+          >
+            Ver talleres
+          </a>
+        </div>
+      </header>
+      <main>
+        <section
+          class="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 pt-8 sm:pt-14 md:pt-24 pb-12 sm:pb-16 md:pb-24"
+        >
+          <div class="grid md:grid-cols-12 gap-6 sm:gap-10 items-end">
+            <div class="md:col-span-7">
+              <p
+                class="reveal text-[10px] sm:text-[12px] uppercase tracking-[0.3em] sm:tracking-[0.35em] opacity-70 mb-4 sm:mb-5"
+              >
+                Tecnología · Innovación · Emprendimiento
+              </p>
+              <h2
+                id="hero-title-el"
+                class="reveal delay-1 display-font text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-semibold leading-[0.95] max-w-4xl"
+              >
+                Tecnología para el empoderamiento económico de las mujeres
+              </h2>
+              <p
+                id="hero-subtitle-el"
+                class="reveal delay-2 mt-4 sm:mt-8 max-w-2xl text-sm sm:text-base md:text-xl leading-relaxed opacity-85"
+              >
+                Impulsamos el acceso a herramientas digitales, innovación y
+                nuevas tecnologías para fortalecer emprendimientos liderados por
+                mujeres.
+              </p>
+              <p
+                class="reveal delay-3 mt-3 sm:mt-5 text-base sm:text-lg md:text-xl font-medium"
+              >
+                Acercamos la tecnología de forma práctica, accesible y útil.
+              </p>
+            </div>
+            <div class="md:col-span-5">
+              <div
+                class="reveal delay-4 soft-card rounded-2xl sm:rounded-[2rem] p-4 sm:p-6 md:p-8"
+              >
+                <div class="flex items-start justify-between gap-3 sm:gap-4">
+                  <div>
+                    <p
+                      class="text-[9px] sm:text-[11px] uppercase tracking-[0.25em] sm:tracking-[0.3em] opacity-60"
+                    >
+                      Visión
+                    </p>
+                    <p class="mt-2 sm:mt-3 text-sm sm:text-lg leading-relaxed">
+                      Democratizar la tecnología para que más mujeres puedan
+                      crecer, innovar y construir independencia económica.
+                    </p>
+                  </div>
+                  <i
+                    data-lucide="cpu"
+                    class="w-6 sm:w-8 h-6 sm:h-8 shrink-0 mt-1"
+                  ></i>
+                </div>
+                <div
+                  class="mt-6 sm:mt-8 grid grid-cols-2 gap-3 sm:gap-4 text-xs sm:text-sm"
+                >
+                  <div
+                    class="rounded-xl sm:rounded-2xl border border-black/10 p-3 sm:p-4 bg-white/20"
+                  >
+                    <p class="opacity-60">Enfoque</p>
+                    <p class="mt-1 font-semibold">Formación práctica</p>
+                  </div>
+                  <div
+                    class="rounded-xl sm:rounded-2xl border border-black/10 p-3 sm:p-4 bg-white/20"
+                  >
+                    <p class="opacity-60">Meta</p>
+                    <p class="mt-1 font-semibold">Más autonomía digital</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="border-t border-black/10 border-b border-black/10">
+          <div
+            class="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 py-10 sm:py-14 md:py-20 grid md:grid-cols-2 gap-6 sm:gap-10 md:gap-16"
+          >
+            <div class="reveal">
+              <p
+                class="text-[10px] sm:text-[12px] uppercase tracking-[0.25em] sm:tracking-[0.3em] opacity-60 mb-3 sm:mb-4"
+              >
+                Nuestra razón de ser
+              </p>
+              <h3
+                id="about-title-el"
+                class="display-font text-2xl sm:text-4xl md:text-5xl font-semibold outline-line"
+              >
+                ¿Por qué esta comisión?
+              </h3>
+            </div>
+            <div class="reveal delay-1">
+              <p class="text-base sm:text-lg leading-relaxed mb-4 sm:mb-6">
+                En la actualidad, la tecnología ya no es opcional: es una
+                herramienta fundamental para el crecimiento de cualquier
+                emprendimiento.
+              </p>
+              <p
+                class="text-sm sm:text-base leading-relaxed opacity-85 mb-4 sm:mb-6"
+              >
+                Sin embargo, muchas mujeres emprendedoras enfrentan barreras
+                como falta de acceso a formación tecnológica, herramientas
+                digitales complejas y poco acompañamiento en procesos de
+                innovación. Esta comisión surge para reducir esa brecha y
+                generar oportunidades reales.
+              </p>
+              <p
+                id="about-text-el"
+                class="text-xs sm:text-sm md:text-base leading-relaxed opacity-80"
+              >
+                Una iniciativa nacida para crear espacios de acompañamiento para
+                mujeres que desean transformar sus empresas o iniciar un
+                emprendimiento, movilizando a jefas de empresa, emprendedoras y
+                agentes de cambio que fortalezcan a esta comunidad y sus
+                negocios.
+              </p>
+            </div>
+          </div>
+        </section>
+        <section
+          class="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 py-12 sm:py-16 md:py-24"
+        >
+          <div class="grid md:grid-cols-12 gap-6 sm:gap-8">
+            <div class="md:col-span-4 reveal">
+              <p
+                class="text-[10px] sm:text-[12px] uppercase tracking-[0.25em] sm:tracking-[0.3em] opacity-60 mb-3 sm:mb-4"
+              >
+                Impacto
+              </p>
+              <h3
+                id="impact-title-el"
+                class="display-font text-2xl sm:text-4xl md:text-5xl font-semibold"
+              >
+                Impulsamos crecimiento real
+              </h3>
+            </div>
+            <div
+              class="md:col-span-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4"
+            >
+              <div class="reveal delay-1 soft-card rounded-2xl p-4 sm:p-5">
+                <div class="number-mark display-font text-4xl sm:text-5xl">
+                  01
+                </div>
+                <p class="mt-2 sm:mt-3 text-sm sm:font-semibold">
+                  Fortalecer su presencia digital
+                </p>
+              </div>
+              <div class="reveal delay-2 soft-card rounded-2xl p-4 sm:p-5">
+                <div class="number-mark display-font text-4xl sm:text-5xl">
+                  02
+                </div>
+                <p class="mt-2 sm:mt-3 text-sm sm:font-semibold">
+                  Mejorar procesos y productos
+                </p>
+              </div>
+              <div class="reveal delay-3 soft-card rounded-2xl p-4 sm:p-5">
+                <div class="number-mark display-font text-4xl sm:text-5xl">
+                  03
+                </div>
+                <p class="mt-2 sm:mt-3 text-sm sm:font-semibold">
+                  Acceder a nuevas tecnologías
+                </p>
+              </div>
+              <div class="reveal delay-2 soft-card rounded-2xl p-4 sm:p-5">
+                <div class="number-mark display-font text-4xl sm:text-5xl">
+                  04
+                </div>
+                <p class="mt-2 sm:mt-3 text-sm sm:font-semibold">
+                  Generar mayores ingresos
+                </p>
+              </div>
+              <div class="reveal delay-3 soft-card rounded-2xl p-4 sm:p-5">
+                <div class="number-mark display-font text-4xl sm:text-5xl">
+                  05
+                </div>
+                <p class="mt-2 sm:mt-3 text-sm sm:font-semibold">
+                  Construir independencia económica
+                </p>
+              </div>
+              <div
+                class="reveal delay-4 soft-card rounded-2xl p-4 sm:p-5 flex items-center"
+              >
+                <p class="text-sm sm:text-lg leading-relaxed">
+                  Creemos en una tecnología accesible, cercana y al servicio de
+                  las personas.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="border-t border-black/10 border-b border-black/10">
+          <div
+            class="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 py-12 sm:py-16 md:py-24 grid lg:grid-cols-2 gap-6 sm:gap-10"
+          >
+            <div class="reveal">
+              <p
+                class="text-[10px] sm:text-[12px] uppercase tracking-[0.25em] sm:tracking-[0.3em] opacity-60 mb-3 sm:mb-4"
+              >
+                Democratización de la tecnología
+              </p>
+              <h3
+                class="display-font text-2xl sm:text-4xl md:text-5xl font-semibold mb-4 sm:mb-6"
+              >
+                La innovación no debe ser exclusiva
+              </h3>
+              <p
+                class="text-sm sm:text-lg leading-relaxed opacity-85 max-w-2xl"
+              >
+                Nuestra misión es acercar la tecnología de forma clara y
+                comprensible, sin barreras técnicas ni económicas, para que
+                cualquier mujer pueda utilizarla como una herramienta de
+                crecimiento.
+              </p>
+            </div>
+            <div
+              class="reveal delay-1 soft-card rounded-2xl sm:rounded-[2rem] p-4 sm:p-6 md:p-8"
+            >
+              <p
+                class="text-[9px] sm:text-[12px] uppercase tracking-[0.25em] sm:tracking-[0.3em] opacity-60 mb-3 sm:mb-4"
+              >
+                Lo que hacemos
+              </p>
+              <h3
+                id="work-title-el"
+                class="display-font text-xl sm:text-3xl md:text-4xl font-semibold mb-4 sm:mb-6"
+              >
+                Espacios de formación y acompañamiento
+              </h3>
+              <ul class="space-y-2 sm:space-y-4">
+                <li
+                  class="flex items-start gap-2 sm:gap-3 text-xs sm:text-base"
+                >
+                  <i
+                    data-lucide="check"
+                    class="w-4 sm:w-5 h-4 sm:h-5 mt-0.5 sm:mt-1 flex-shrink-0"
+                  ></i>
+                  <span>Herramientas digitales accesibles</span>
+                </li>
+                <li
+                  class="flex items-start gap-2 sm:gap-3 text-xs sm:text-base"
+                >
+                  <i
+                    data-lucide="check"
+                    class="w-4 sm:w-5 h-4 sm:h-5 mt-0.5 sm:mt-1 flex-shrink-0"
+                  ></i>
+                  <span>Uso de inteligencia artificial</span>
+                </li>
+                <li
+                  class="flex items-start gap-2 sm:gap-3 text-xs sm:text-base"
+                >
+                  <i
+                    data-lucide="check"
+                    class="w-4 sm:w-5 h-4 sm:h-5 mt-0.5 sm:mt-1 flex-shrink-0"
+                  ></i>
+                  <span>Desarrollo de presencia online</span>
+                </li>
+                <li
+                  class="flex items-start gap-2 sm:gap-3 text-xs sm:text-base"
+                >
+                  <i
+                    data-lucide="check"
+                    class="w-4 sm:w-5 h-4 sm:h-5 mt-0.5 sm:mt-1 flex-shrink-0"
+                  ></i>
+                  <span>Organización y productividad digital</span>
+                </li>
+                <li
+                  class="flex items-start gap-2 sm:gap-3 text-xs sm:text-base"
+                >
+                  <i
+                    data-lucide="check"
+                    class="w-4 sm:w-5 h-4 sm:h-5 mt-0.5 sm:mt-1 flex-shrink-0"
+                  ></i>
+                  <span>Innovación aplicada a emprendimientos</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <section
+          id="talleres"
+          class="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 py-12 sm:py-16 md:py-24"
+        >
+          <div
+            class="flex flex-col md:flex-row md:items-end md:justify-between gap-4 sm:gap-6 mb-8 sm:mb-10"
+          >
+            <div class="reveal">
+              <p
+                class="text-[10px] sm:text-[12px] uppercase tracking-[0.25em] sm:tracking-[0.3em] opacity-60 mb-3 sm:mb-4"
+              >
+                Talleres
+              </p>
+              <h3
+                id="workshop-title-el"
+                class="display-font text-2xl sm:text-4xl md:text-5xl font-semibold"
+              >
+                Aprender haciendo
+              </h3>
+            </div>
+            <p
+              class="reveal delay-1 max-w-xl text-xs sm:text-base md:text-lg opacity-80"
+            >
+              Ofrecemos experiencias prácticas diseñadas para convertir la
+              tecnología en una aliada cotidiana para emprender.
+            </p>
+          </div>
+          <div class="grid md:grid-cols-2 xl:grid-cols-4 gap-8 sm:gap-12">
+            <article class="reveal delay-1 flex flex-col">
+              <i
+                data-lucide="code-2"
+                class="w-8 sm:w-10 h-8 sm:h-10 mb-6 sm:mb-8"
+              ></i>
+              <h4
+                class="display-font text-lg sm:text-2xl font-semibold mb-3 sm:mb-4"
+              >
+                Vibe Coding
+              </h4>
+              <p class="text-xs sm:text-sm leading-relaxed opacity-80">
+                Creación de sitios web de forma sencilla y accesible.
+              </p>
+            </article>
+            <article class="reveal delay-2 flex flex-col">
+              <i
+                data-lucide="sparkles"
+                class="w-8 sm:w-10 h-8 sm:h-10 mb-6 sm:mb-8"
+              ></i>
+              <h4
+                class="display-font text-lg sm:text-2xl font-semibold mb-3 sm:mb-4"
+              >
+                Ingeniería de Prompts
+              </h4>
+              <p class="text-xs sm:text-sm leading-relaxed opacity-80">
+                Uso de inteligencia artificial para crear contenido, diseño y
+                estrategias digitales.
+              </p>
+            </article>
+            <article class="reveal delay-3 flex flex-col">
+              <i
+                data-lucide="inbox"
+                class="w-8 sm:w-10 h-8 sm:h-10 mb-6 sm:mb-8"
+              ></i>
+              <h4
+                class="display-font text-lg sm:text-2xl font-semibold mb-3 sm:mb-4"
+              >
+                Herramientas Digitales
+              </h4>
+              <p class="text-xs sm:text-sm leading-relaxed opacity-80">
+                Organización, gestión y automatización con plataformas como
+                Notion.
+              </p>
+            </article>
+            <article class="reveal delay-4 flex flex-col">
+              <i
+                data-lucide="globe"
+                class="w-8 sm:w-10 h-8 sm:h-10 mb-6 sm:mb-8"
+              ></i>
+              <h4
+                class="display-font text-lg sm:text-2xl font-semibold mb-3 sm:mb-4"
+              >
+                Presencia Digital Estratégica
+              </h4>
+              <p class="text-xs sm:text-sm leading-relaxed opacity-80">
+                Cómo construir una imagen profesional en internet.
+              </p>
+            </article>
+          </div>
+        </section>
+        <section class="border-t border-black/10 border-b border-black/10">
+          <div
+            class="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 py-12 sm:py-16 md:py-24"
+          >
+            <div class="reveal mb-8 sm:mb-10 md:mb-14">
+              <p
+                class="text-[10px] sm:text-[12px] uppercase tracking-[0.25em] sm:tracking-[0.3em] opacity-60 mb-3 sm:mb-4"
+              >
+                Trayectoria académica
+              </p>
+              <h3
+                id="academic-title-el"
+                class="display-font text-2xl sm:text-4xl md:text-5xl font-semibold"
+              >
+                Formación académica de Índigo
+              </h3>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-12">
+              <article class="reveal delay-1 flex flex-col">
+                <i
+                  data-lucide="book-open"
+                  class="w-8 sm:w-10 h-8 sm:h-10 mb-6 sm:mb-8"
+                ></i>
+                <h4
+                  class="display-font text-lg sm:text-2xl font-semibold mb-3 sm:mb-4"
+                >
+                  Maestría en Comunicación
+                </h4>
+                <p
+                  class="text-xs sm:text-sm leading-relaxed opacity-80 mb-3 sm:mb-4"
+                >
+                  Especialización en Identidad Corporativa
+                </p>
+                <ul
+                  class="text-xs sm:text-sm space-y-1.5 sm:space-y-2 opacity-75"
+                >
+                  <li class="flex items-start gap-2">
+                    <i
+                      data-lucide="check"
+                      class="w-3 sm:w-4 h-3 sm:h-4 mt-0.5 flex-shrink-0"
+                    ></i>
+                    <span>Comunicación visual</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <i
+                      data-lucide="check"
+                      class="w-3 sm:w-4 h-3 sm:h-4 mt-0.5 flex-shrink-0"
+                    ></i>
+                    <span>Estrategia de marca</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <i
+                      data-lucide="check"
+                      class="w-3 sm:w-4 h-3 sm:h-4 mt-0.5 flex-shrink-0"
+                    ></i>
+                    <span>Diseño de identidades</span>
+                  </li>
+                </ul>
+              </article>
+              <article class="reveal delay-2 flex flex-col">
+                <i
+                  data-lucide="code"
+                  class="w-8 sm:w-10 h-8 sm:h-10 mb-6 sm:mb-8"
+                ></i>
+                <h4
+                  class="display-font text-lg sm:text-2xl font-semibold mb-3 sm:mb-4"
+                >
+                  Desarrollo Web Full Stack
+                </h4>
+                <p
+                  class="text-xs sm:text-sm leading-relaxed opacity-80 mb-3 sm:mb-4"
+                >
+                  Certificaciones y bootcamps especializados
+                </p>
+                <ul
+                  class="text-xs sm:text-sm space-y-1.5 sm:space-y-2 opacity-75"
+                >
+                  <li class="flex items-start gap-2">
+                    <i
+                      data-lucide="check"
+                      class="w-3 sm:w-4 h-3 sm:h-4 mt-0.5 flex-shrink-0"
+                    ></i>
+                    <span>Frontend &amp; Backend</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <i
+                      data-lucide="check"
+                      class="w-3 sm:w-4 h-3 sm:h-4 mt-0.5 flex-shrink-0"
+                    ></i>
+                    <span>Bases de datos</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <i
+                      data-lucide="check"
+                      class="w-3 sm:w-4 h-3 sm:h-4 mt-0.5 flex-shrink-0"
+                    ></i>
+                    <span>Arquitectura de sistemas</span>
+                  </li>
+                </ul>
+              </article>
+              <article class="reveal delay-3 flex flex-col">
+                <i
+                  data-lucide="brain-circuit"
+                  class="w-8 sm:w-10 h-8 sm:h-10 mb-6 sm:mb-8"
+                ></i>
+                <h4
+                  class="display-font text-lg sm:text-2xl font-semibold mb-3 sm:mb-4"
+                >
+                  Especialización en IA
+                </h4>
+                <p
+                  class="text-xs sm:text-sm leading-relaxed opacity-80 mb-3 sm:mb-4"
+                >
+                  Machine Learning y IA Generativa
+                </p>
+                <ul
+                  class="text-xs sm:text-sm space-y-1.5 sm:space-y-2 opacity-75"
+                >
+                  <li class="flex items-start gap-2">
+                    <i
+                      data-lucide="check"
+                      class="w-3 sm:w-4 h-3 sm:h-4 mt-0.5 flex-shrink-0"
+                    ></i>
+                    <span>Modelos de lenguaje</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <i
+                      data-lucide="check"
+                      class="w-3 sm:w-4 h-3 sm:h-4 mt-0.5 flex-shrink-0"
+                    ></i>
+                    <span>Ética en IA</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <i
+                      data-lucide="check"
+                      class="w-3 sm:w-4 h-3 sm:h-4 mt-0.5 flex-shrink-0"
+                    ></i>
+                    <span>Ingeniería de prompts</span>
+                  </li>
+                </ul>
+              </article>
+              <article class="reveal delay-2 flex flex-col">
+                <i
+                  data-lucide="palette"
+                  class="w-8 sm:w-10 h-8 sm:h-10 mb-6 sm:mb-8"
+                ></i>
+                <h4
+                  class="display-font text-lg sm:text-2xl font-semibold mb-3 sm:mb-4"
+                >
+                  Diseño y UX/UI
+                </h4>
+                <p
+                  class="text-xs sm:text-sm leading-relaxed opacity-80 mb-3 sm:mb-4"
+                >
+                  Experiencia de usuario e interfaces
+                </p>
+                <ul
+                  class="text-xs sm:text-sm space-y-1.5 sm:space-y-2 opacity-75"
+                >
+                  <li class="flex items-start gap-2">
+                    <i
+                      data-lucide="check"
+                      class="w-3 sm:w-4 h-3 sm:h-4 mt-0.5 flex-shrink-0"
+                    ></i>
+                    <span>Diseño centrado en el usuario</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <i
+                      data-lucide="check"
+                      class="w-3 sm:w-4 h-3 sm:h-4 mt-0.5 flex-shrink-0"
+                    ></i>
+                    <span>Accesibilidad digital</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <i
+                      data-lucide="check"
+                      class="w-3 sm:w-4 h-3 sm:h-4 mt-0.5 flex-shrink-0"
+                    ></i>
+                    <span>Prototipos interactivos</span>
+                  </li>
+                </ul>
+              </article>
+              <article class="reveal delay-3 flex flex-col">
+                <i
+                  data-lucide="heart-handshake"
+                  class="w-8 sm:w-10 h-8 sm:h-10 mb-6 sm:mb-8"
+                ></i>
+                <h4
+                  class="display-font text-lg sm:text-2xl font-semibold mb-3 sm:mb-4"
+                >
+                  Neurodiversidad e Inclusión
+                </h4>
+                <p
+                  class="text-xs sm:text-sm leading-relaxed opacity-80 mb-3 sm:mb-4"
+                >
+                  Formación especializada en inclusión
+                </p>
+                <ul
+                  class="text-xs sm:text-sm space-y-1.5 sm:space-y-2 opacity-75"
+                >
+                  <li class="flex items-start gap-2">
+                    <i
+                      data-lucide="check"
+                      class="w-3 sm:w-4 h-3 sm:h-4 mt-0.5 flex-shrink-0"
+                    ></i>
+                    <span>TDAH y neurodiversidad</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <i
+                      data-lucide="check"
+                      class="w-3 sm:w-4 h-3 sm:h-4 mt-0.5 flex-shrink-0"
+                    ></i>
+                    <span>Diseño inclusivo</span>
+                  </li>
+                  <li class="flex items-start gap-2">
+                    <i
+                      data-lucide="check"
+                      class="w-3 sm:w-4 h-3 sm:h-4 mt-0.5 flex-shrink-0"
+                    ></i>
+                    <span>Acompañamiento neurodiverso</span>
+                  </li>
+                </ul>
+              </article>
+            </div>
+          </div>
+        </section>
+        <section
+          class="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 py-12 sm:py-16 md:py-24"
+        >
+          <div class="reveal mb-8 sm:mb-10 md:mb-14">
+            <p
+              class="text-[10px] sm:text-[12px] uppercase tracking-[0.25em] sm:tracking-[0.3em] opacity-60 mb-3 sm:mb-4"
+            >
+              Experiencia profesional
+            </p>
+            <h3
+              id="professional-title-el"
+              class="display-font text-2xl sm:text-4xl md:text-5xl font-semibold"
+            >
+              Trayectoria profesional de Índigo
+            </h3>
+          </div>
+          <div class="space-y-4 sm:space-y-6">
+            <div class="reveal delay-1 soft-card rounded-2xl p-5 sm:p-6 md:p-7">
+              <div
+                class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 sm:gap-4 mb-3 sm:mb-4"
+              >
+                <div>
+                  <h4 class="display-font text-base sm:text-xl font-semibold">
+                    Fundadora · Delulu Future Dev
+                  </h4>
+                  <p class="text-xs sm:text-sm opacity-70">
+                    Agencia creativa de desarrollo web e IA
+                  </p>
+                </div>
+                <span
+                  class="text-[10px] sm:text-xs uppercase tracking-[0.2em] opacity-60 whitespace-nowrap"
+                  >2020 - Presente</span
+                >
+              </div>
+              <p
+                class="text-xs sm:text-sm leading-relaxed opacity-80 mb-3 sm:mb-4"
+              >
+                Desarrolla soluciones web personalizadas y estrategias de IA
+                para emprendimientos y startups. Especializada en frontend
+                moderno, diseño de experiencia y automatización con herramientas
+                de inteligencia artificial.
+              </p>
+              <ul class="text-xs sm:text-sm space-y-1.5 opacity-75">
+                <li class="flex items-start gap-2">
+                  <i
+                    data-lucide="check"
+                    class="w-3 sm:w-4 h-3 sm:h-4 mt-0.5 flex-shrink-0"
+                  ></i>
+                  <span>Diseño y desarrollo web Full Stack</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i
+                    data-lucide="check"
+                    class="w-3 sm:w-4 h-3 sm:h-4 mt-0.5 flex-shrink-0"
+                  ></i>
+                  <span>Integración de IA en proyectos</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i
+                    data-lucide="check"
+                    class="w-3 sm:w-4 h-3 sm:h-4 mt-0.5 flex-shrink-0"
+                  ></i>
+                  <span>Consultoría en transformación digital</span>
+                </li>
+              </ul>
+            </div>
+            <div class="reveal delay-2 soft-card rounded-2xl p-5 sm:p-6 md:p-7">
+              <div
+                class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 sm:gap-4 mb-3 sm:mb-4"
+              >
+                <div>
+                  <h4 class="display-font text-base sm:text-xl font-semibold">
+                    Creadora · Wu Wei Neurospicy
+                  </h4>
+                  <p class="text-xs sm:text-sm opacity-70">
+                    Comunidad y contenido sobre neurodiversidad
+                  </p>
+                </div>
+                <span
+                  class="text-[10px] sm:text-xs uppercase tracking-[0.2em] opacity-60 whitespace-nowrap"
+                  >2021 - Presente</span
+                >
+              </div>
+              <p
+                class="text-xs sm:text-sm leading-relaxed opacity-80 mb-3 sm:mb-4"
+              >
+                Construye una comunidad inclusiva donde explora la
+                neurodiversidad desde la creación, la tecnología y el bienestar.
+                Contenido educativo, recursos prácticos y acompañamiento para
+                personas neurodivergentes.
+              </p>
+              <ul class="text-xs sm:text-sm space-y-1.5 opacity-75">
+                <li class="flex items-start gap-2">
+                  <i
+                    data-lucide="check"
+                    class="w-3 sm:w-4 h-3 sm:h-4 mt-0.5 flex-shrink-0"
+                  ></i>
+                  <span>Creación de contenido educativo</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i
+                    data-lucide="check"
+                    class="w-3 sm:w-4 h-3 sm:h-4 mt-0.5 flex-shrink-0"
+                  ></i>
+                  <span>Formación y talleres inclusivos</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i
+                    data-lucide="check"
+                    class="w-3 sm:w-4 h-3 sm:h-4 mt-0.5 flex-shrink-0"
+                  ></i>
+                  <span>Mentoría para neurodiversos</span>
+                </li>
+              </ul>
+            </div>
+            <div class="reveal delay-3 soft-card rounded-2xl p-5 sm:p-6 md:p-7">
+              <div
+                class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 sm:gap-4 mb-3 sm:mb-4"
+              >
+                <div>
+                  <h4 class="display-font text-base sm:text-xl font-semibold">
+                    Estratega Creativa · Proyectos Independientes
+                  </h4>
+                  <p class="text-xs sm:text-sm opacity-70">
+                    Consultoría y dirección creativa
+                  </p>
+                </div>
+                <span
+                  class="text-[10px] sm:text-xs uppercase tracking-[0.2em] opacity-60 whitespace-nowrap"
+                  >2018 - Presente</span
+                >
+              </div>
+              <p
+                class="text-xs sm:text-sm leading-relaxed opacity-80 mb-3 sm:mb-4"
+              >
+                Acompaña a emprendedoras y pequeños negocios en su
+                transformación digital, brindando estrategia creativa, identidad
+                visual y soluciones tecnológicas adaptadas a sus necesidades.
+              </p>
+              <ul class="text-xs sm:text-sm space-y-1.5 opacity-75">
+                <li class="flex items-start gap-2">
+                  <i
+                    data-lucide="check"
+                    class="w-3 sm:w-4 h-3 sm:h-4 mt-0.5 flex-shrink-0"
+                  ></i>
+                  <span>Estrategia de marca y comunicación</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i
+                    data-lucide="check"
+                    class="w-3 sm:w-4 h-3 sm:h-4 mt-0.5 flex-shrink-0"
+                  ></i>
+                  <span>Identidad visual y diseño gráfico</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i
+                    data-lucide="check"
+                    class="w-3 sm:w-4 h-3 sm:h-4 mt-0.5 flex-shrink-0"
+                  ></i>
+                  <span>Acompañamiento a emprendimientos</span>
+                </li>
+              </ul>
+            </div>
+            <div class="reveal delay-4 soft-card rounded-2xl p-5 sm:p-6 md:p-7">
+              <div
+                class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 sm:gap-4 mb-3 sm:mb-4"
+              >
+                <div>
+                  <h4 class="display-font text-base sm:text-xl font-semibold">
+                    Docente · Formadora en IA e Inclusión
+                  </h4>
+                  <p class="text-xs sm:text-sm opacity-70">
+                    Educación especializada
+                  </p>
+                </div>
+                <span
+                  class="text-[10px] sm:text-xs uppercase tracking-[0.2em] opacity-60 whitespace-nowrap"
+                  >2022 - Presente</span
+                >
+              </div>
+              <p
+                class="text-xs sm:text-sm leading-relaxed opacity-80 mb-3 sm:mb-4"
+              >
+                Diseña y facilita talleres sobre inteligencia artificial,
+                inclusión digital y neurodiversidad. Su enfoque pedagógico honra
+                diferentes ritmos de aprendizaje y estilos neurodiversos.
+              </p>
+              <ul class="text-xs sm:text-sm space-y-1.5 opacity-75">
+                <li class="flex items-start gap-2">
+                  <i
+                    data-lucide="check"
+                    class="w-3 sm:w-4 h-3 sm:h-4 mt-0.5 flex-shrink-0"
+                  ></i>
+                  <span>Formación en IA inclusiva</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i
+                    data-lucide="check"
+                    class="w-3 sm:w-4 h-3 sm:h-4 mt-0.5 flex-shrink-0"
+                  ></i>
+                  <span>Talleres de tecnología accesible</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <i
+                    data-lucide="check"
+                    class="w-3 sm:w-4 h-3 sm:h-4 mt-0.5 flex-shrink-0"
+                  ></i>
+                  <span>Mentorías 1-a-1</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <section
+          class="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 py-12 sm:py-16 md:py-24"
+        >
+          <div
+            class="rounded-xl sm:rounded-[2rem] border border-black/15 px-4 sm:px-6 md:px-10 py-8 sm:py-10 md:py-14 bg-white/20 reveal"
+          >
+            <p
+              class="text-[9px] sm:text-[12px] uppercase tracking-[0.25em] sm:tracking-[0.3em] opacity-60 mb-3 sm:mb-4"
+            >
+              Visión estratégica · Propuesta
+            </p>
+            <div class="grid lg:grid-cols-12 gap-6 sm:gap-8">
+              <div class="lg:col-span-4">
+                <h3
+                  class="display-font text-2xl sm:text-4xl md:text-5xl font-semibold"
+                >
+                  Índigo: Tecnología + Inclusión
+                </h3>
+              </div>
+              <div
+                class="lg:col-span-8 space-y-3 sm:space-y-5 text-xs sm:text-base md:text-lg leading-relaxed opacity-85"
+              >
+                <div>
+                  <p
+                    id="proposer-name-el"
+                    class="font-semibold display-font text-lg sm:text-2xl"
+                  >
+                    Índigo Lilo Bárcena
+                  </p>
+                  <p class="text-[10px] sm:text-xs opacity-60 mt-1">
+                    Nombre legal: Alejandra Bárcena · Persona no binaria en
+                    proceso de cambio de nombre
+                  </p>
+                </div>
+                <p
+                  id="proposer-title-el"
+                  class="text-[9px] sm:text-xs uppercase tracking-[0.15em] sm:tracking-[0.2em] opacity-70"
+                >
+                  Creativa Full Stack &amp; AI Developer · Estratega Creativa
+                </p>
+                <p id="proposer-bio-el" class="text-xs sm:text-base">
+                  Desarrolladora, estratega creativa y emprendedora con déficit
+                  de atención. Índigo diseña espacios de aprendizaje donde la
+                  neurodivergencia es bienvenida, el ritmo es flexible y el
+                  error es parte del proceso creativo. Especializada en
+                  comunicación visual, diseño digital e IA inclusiva, crea
+                  experiencias educativas que honran diferentes formas de
+                  aprender y procesar información.
+                </p>
+                <div class="mt-4 sm:mt-6 grid sm:grid-cols-2 gap-3 sm:gap-4">
+                  <div
+                    class="rounded-lg sm:rounded-2xl border border-black/10 p-3 sm:p-4 bg-white/25"
+                  >
+                    <p
+                      class="text-[8px] sm:text-xs uppercase tracking-[0.2em] opacity-60 mb-2"
+                    >
+                      Proyectos
+                    </p>
+                    <ul class="space-y-1 sm:space-y-2 text-xs sm:text-sm">
+                      <li>
+                        <a
+                          href="https://delulufuture.dev/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          class="font-semibold hover:opacity-70 underline underline-offset-2"
+                          >Delulu Future Dev</a
+                        >
+                      </li>
+                      <li>
+                        <a
+                          href="https://wuweineurospicy.com.mx/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          class="font-semibold hover:opacity-70 underline underline-offset-2"
+                          >Wu wei Neurospicy</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                  <div
+                    class="rounded-lg sm:rounded-2xl border border-black/10 p-3 sm:p-4 bg-white/25"
+                  >
+                    <p
+                      class="text-[8px] sm:text-xs uppercase tracking-[0.2em] opacity-60 mb-2"
+                    >
+                      Contacto
+                    </p>
+                    <p class="text-xs sm:text-sm">
+                      <a
+                        href="mailto:indigolilobarcena@delulufuture.dev"
+                        class="font-semibold hover:opacity-70 underline underline-offset-2"
+                        >indigolilobarcena@delulu<span class="hidden sm:inline"
+                          >future.dev</span
+                        ></a
+                      >
+                    </p>
+                  </div>
+                </div>
+                <div class="mt-6 sm:mt-8 grid sm:grid-cols-3 gap-2 sm:gap-4">
+                  <div
+                    class="rounded-lg sm:rounded-2xl border border-black/10 p-3 sm:p-4 bg-white/25"
+                  >
+                    <p
+                      class="text-[8px] sm:text-xs uppercase tracking-[0.2em] opacity-60"
+                    >
+                      Formación
+                    </p>
+                    <p
+                      class="mt-1 sm:mt-2 text-xs sm:text-sm font-semibold leading-tight"
+                    >
+                      Maestría en Comunicación e Identidad Corporativa
+                    </p>
+                  </div>
+                  <div
+                    class="rounded-lg sm:rounded-2xl border border-black/10 p-3 sm:p-4 bg-white/25"
+                  >
+                    <p
+                      class="text-[8px] sm:text-xs uppercase tracking-[0.2em] opacity-60"
+                    >
+                      Especialidad
+                    </p>
+                    <p
+                      class="mt-1 sm:mt-2 text-xs sm:text-sm font-semibold leading-tight"
+                    >
+                      IA Inclusiva para Neurodiversos
+                    </p>
+                  </div>
+                  <div
+                    class="rounded-lg sm:rounded-2xl border border-black/10 p-3 sm:p-4 bg-white/25"
+                  >
+                    <p
+                      class="text-[8px] sm:text-xs uppercase tracking-[0.2em] opacity-60"
+                    >
+                      Misión
+                    </p>
+                    <p
+                      class="mt-1 sm:mt-2 text-xs sm:text-sm font-semibold leading-tight"
+                    >
+                      Espacios de aprendizaje accesibles
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section
+          class="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 pb-10 sm:pb-14 md:pb-24"
+        >
+          <div
+            class="rounded-xl sm:rounded-[2rem] border border-black/15 px-4 sm:px-6 md:px-10 py-8 sm:py-10 md:py-14 bg-white/20 reveal"
+          >
+            <p
+              class="text-[9px] sm:text-[12px] uppercase tracking-[0.25em] sm:tracking-[0.3em] opacity-60 mb-3 sm:mb-4"
+            >
+              Origen e impulso institucional
+            </p>
+            <div class="grid lg:grid-cols-12 gap-6 sm:gap-8">
+              <div class="lg:col-span-4">
+                <h3
+                  class="display-font text-2xl sm:text-4xl md:text-5xl font-semibold"
+                >
+                  Una red que acompaña, inspira y transforma
+                </h3>
+              </div>
+              <div
+                class="lg:col-span-8 space-y-3 sm:space-y-5 text-xs sm:text-base md:text-lg leading-relaxed opacity-85"
+              >
+                <p>
+                  Esta organización surge de la iniciativa de crear espacios de
+                  acompañamiento para mujeres que desean transformar sus
+                  empresas o iniciar algún emprendimiento.
+                </p>
+                <p>
+                  Su objetivo principal es movilizar a mujeres jefas de empresa
+                  o emprendedoras y agentes de cambio que apoyen y empoderen a
+                  esta comunidad de mujeres y sus negocios.
+                </p>
+                <p>
+                  La iniciativa fue establecida en 2018 por Emilia Vidal,
+                  cofundadora y Presidenta Emérita, y Anabel Martínez,
+                  cofundadora y Presidenta de Jóvenes Empresarias, ambas
+                  empresarias mexicanas que han forjado sus empresas en sectores
+                  donde las mujeres siguen siendo minoría.
+                </p>
+                <p>
+                  Emilia Vidal es empresaria desde 1998 y su principal sector es
+                  la seguridad. Su empresa fue reconocida por el Gobierno
+                  Federal en 2008 como la única empresa con autorizaciones
+                  federales para capacitación y servicios en Control de
+                  Confianza bajo el Modelo Nacional. Desde ahí nació la
+                  inquietud de integrar y compartir conocimiento con perspectiva
+                  de género tanto en instituciones federales como en el sector
+                  empresarial.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer class="border-t border-black/10">
+        <div
+          class="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 py-6 sm:py-8 md:py-10 flex flex-col gap-3 sm:gap-4 md:flex-row md:items-center md:justify-between"
+        >
+          <p id="footer-text-el" class="text-xs sm:text-sm opacity-75">
+            Comisión de Ciencia, Tecnología e Innovación · Consejo Nacional de
+            Mujeres Empresarias
+          </p>
+          <a
+            href="#top-title"
+            class="text-xs sm:text-sm font-semibold underline underline-offset-4 hover:opacity-70 focus:outline-none focus:ring-2 focus:ring-black rounded-sm w-fit"
+          >
+            Volver arriba
+          </a>
+        </div>
+      </footer>
+    </div>
+    <script>
+      const defaultConfig = {
+        background_color: "#e8dcc9",
+        surface_color: "#f3eadc",
+        text_color: "#111111",
+        primary_action_color: "#111111",
+        secondary_action_color: "#7b6a58",
+        font_family: "Cormorant Garamond",
+        font_size: 18,
+        hero_title:
+          "Tecnología para el empoderamiento económico de las mujeres",
+        hero_subtitle:
+          "Impulsamos el acceso a herramientas digitales, innovación y nuevas tecnologías para fortalecer emprendimientos liderados por mujeres.",
+        about_title: "¿Por qué esta comisión?",
+        about_text:
+          "Una iniciativa nacida para crear espacios de acompañamiento para mujeres que desean transformar sus empresas o iniciar un emprendimiento, movilizando a jefas de empresa, emprendedoras y agentes de cambio que fortalezcan a esta comunidad y sus negocios.",
+        impact_title: "Impulsamos crecimiento real",
+        work_title: "Espacios de formación y acompañamiento",
+        workshop_title: "Aprender haciendo",
+        academic_title: "Formación académica de Índigo",
+        professional_title: "Trayectoria profesional de Índigo",
+        footer_text:
+          "Comisión de Ciencia, Tecnología e Innovación · Consejo Nacional de Mujeres Empresarias",
+        proposer_name: "Índigo Lilo Bárcena",
+        proposer_title:
+          "Creativa Full Stack & AI Developer · Estratega Creativa",
+        proposer_bio:
+          "Desarrolladora, estratega creativa y emprendedora con déficit de atención. Índigo diseña espacios de aprendizaje donde la neurodivergencia es bienvenida, el ritmo es flexible y el error es parte del proceso creativo. Especializada en comunicación visual, diseño digital e IA inclusiva, crea experiencias educativas que honran diferentes formas de aprender y procesar información.",
+      };
+
+      const els = {
+        app: document.getElementById("app"),
+        topTitle: document.getElementById("top-title"),
+        heroTitle: document.getElementById("hero-title-el"),
+        heroSubtitle: document.getElementById("hero-subtitle-el"),
+        aboutTitle: document.getElementById("about-title-el"),
+        aboutText: document.getElementById("about-text-el"),
+        impactTitle: document.getElementById("impact-title-el"),
+        workTitle: document.getElementById("work-title-el"),
+        workshopTitle: document.getElementById("workshop-title-el"),
+        academicTitle: document.getElementById("academic-title-el"),
+        professionalTitle: document.getElementById("professional-title-el"),
+        footerText: document.getElementById("footer-text-el"),
+        proposerName: document.getElementById("proposer-name-el"),
+        proposerTitle: document.getElementById("proposer-title-el"),
+        proposerBio: document.getElementById("proposer-bio-el"),
+      };
+
+      function applyConfig(config) {
+        const merged = { ...defaultConfig, ...config };
+        document.body.style.backgroundColor = merged.background_color;
+        document.body.style.color = merged.text_color;
+        els.app.style.backgroundColor = merged.background_color;
+
+        const softCards = document.querySelectorAll(".soft-card");
+        softCards.forEach((card) => {
+          card.style.backgroundColor = merged.surface_color + "33";
+          card.style.borderColor = merged.text_color + "22";
+        });
+
+        const borders = document.querySelectorAll(
+          ".border-black, .border-black\\/10, .border-black\\/15, .border-black\\/20"
+        );
+        borders.forEach((el) => {
+          el.style.borderColor = merged.text_color;
+        });
+
+        const primaryButtons = document.querySelectorAll('a[href="#talleres"]');
+        primaryButtons.forEach((btn) => {
+          btn.style.borderColor = merged.primary_action_color;
+          btn.style.color = merged.primary_action_color;
+        });
+
+        const secondaryLinks = document.querySelectorAll(
+          'a[href="#top-title"]'
+        );
+        secondaryLinks.forEach((link) => {
+          link.style.color = merged.secondary_action_color;
+        });
+
+        const fontStackDisplay = `${merged.font_family}, "Cormorant Garamond", Georgia, serif`;
+        const fontStackBody = `${merged.font_family}, "Manrope", "Segoe UI", sans-serif`;
+
+        document.querySelectorAll(".display-font").forEach((el) => {
+          el.style.fontFamily = fontStackDisplay;
+        });
+        document.body.style.fontFamily = fontStackBody;
+
+        const base = Number(merged.font_size) || 18;
+        els.topTitle.style.fontSize = `${base * 1.5}px`;
+        els.heroTitle.style.fontSize = `${base * 3.2}px`;
+        els.heroSubtitle.style.fontSize = `${base * 1}px`;
+        els.aboutTitle.style.fontSize = `${base * 2.3}px`;
+        els.aboutText.style.fontSize = `${base * 0.9}px`;
+        els.impactTitle.style.fontSize = `${base * 2.3}px`;
+        els.workTitle.style.fontSize = `${base * 1.9}px`;
+        els.workshopTitle.style.fontSize = `${base * 2.3}px`;
+        els.academicTitle.style.fontSize = `${base * 2.3}px`;
+        els.professionalTitle.style.fontSize = `${base * 2.3}px`;
+        els.footerText.style.fontSize = `${base * 0.78}px`;
+
+        if (window.innerWidth >= 768) {
+          els.heroTitle.style.fontSize = `${base * 4.2}px`;
+        }
+        if (window.innerWidth >= 1024) {
+          els.heroTitle.style.fontSize = `${base * 4.7}px`;
+        }
+
+        els.topTitle.textContent =
+          "Comisión de Ciencia, Tecnología e Innovación";
+        els.heroTitle.textContent = merged.hero_title;
+        els.heroSubtitle.textContent = merged.hero_subtitle;
+        els.aboutTitle.textContent = merged.about_title;
+        els.aboutText.textContent = merged.about_text;
+        els.impactTitle.textContent = merged.impact_title;
+        els.workTitle.textContent = merged.work_title;
+        els.workshopTitle.textContent = merged.workshop_title;
+        els.formationTitle.textContent = merged.formation_title;
+        els.formationSubtitle.textContent = merged.formation_subtitle;
+        els.academicTitle.textContent = merged.academic_title;
+        els.professionalTitle.textContent = merged.professional_title;
+        els.footerText.textContent = merged.footer_text;
+        els.proposerName.textContent = merged.proposer_name;
+        els.proposerTitle.textContent = merged.proposer_title;
+        els.proposerBio.textContent = merged.proposer_bio;
+      }
+
+      if (window.elementSdk) {
+        window.elementSdk.init({
+          defaultConfig,
+          onConfigChange: async (config) => {
+            applyConfig(config);
+          },
+          mapToCapabilities: (config) => ({
+            recolorables: [
+              {
+                get: () =>
+                  config.background_color || defaultConfig.background_color,
+                set: (value) =>
+                  window.elementSdk.setConfig({ background_color: value }),
+              },
+              {
+                get: () => config.surface_color || defaultConfig.surface_color,
+                set: (value) =>
+                  window.elementSdk.setConfig({ surface_color: value }),
+              },
+              {
+                get: () => config.text_color || defaultConfig.text_color,
+                set: (value) =>
+                  window.elementSdk.setConfig({ text_color: value }),
+              },
+              {
+                get: () =>
+                  config.primary_action_color ||
+                  defaultConfig.primary_action_color,
+                set: (value) =>
+                  window.elementSdk.setConfig({ primary_action_color: value }),
+              },
+              {
+                get: () =>
+                  config.secondary_action_color ||
+                  defaultConfig.secondary_action_color,
+                set: (value) =>
+                  window.elementSdk.setConfig({
+                    secondary_action_color: value,
+                  }),
+              },
+            ],
+            borderables: [],
+            fontEditable: {
+              get: () => config.font_family || defaultConfig.font_family,
+              set: (value) =>
+                window.elementSdk.setConfig({ font_family: value }),
+            },
+            fontSizeable: {
+              get: () => config.font_size || defaultConfig.font_size,
+              set: (value) => window.elementSdk.setConfig({ font_size: value }),
+            },
+          }),
+          mapToEditPanelValues: (config) =>
+            new Map([
+              ["hero_title", config.hero_title || defaultConfig.hero_title],
+              [
+                "hero_subtitle",
+                config.hero_subtitle || defaultConfig.hero_subtitle,
+              ],
+              ["about_title", config.about_title || defaultConfig.about_title],
+              ["about_text", config.about_text || defaultConfig.about_text],
+              [
+                "impact_title",
+                config.impact_title || defaultConfig.impact_title,
+              ],
+              ["work_title", config.work_title || defaultConfig.work_title],
+              [
+                "workshop_title",
+                config.workshop_title || defaultConfig.workshop_title,
+              ],
+              [
+                "academic_title",
+                config.academic_title || defaultConfig.academic_title,
+              ],
+              [
+                "professional_title",
+                config.professional_title || defaultConfig.professional_title,
+              ],
+              ["footer_text", config.footer_text || defaultConfig.footer_text],
+              [
+                "proposer_name",
+                config.proposer_name || defaultConfig.proposer_name,
+              ],
+              [
+                "proposer_title",
+                config.proposer_title || defaultConfig.proposer_title,
+              ],
+              [
+                "proposer_bio",
+                config.proposer_bio || defaultConfig.proposer_bio,
+              ],
+            ]),
+        });
+        applyConfig(window.elementSdk.config || defaultConfig);
+      } else {
+        applyConfig(defaultConfig);
+      }
+
+      lucide.createIcons();
+      window.addEventListener("resize", () => {
+        const currentConfig =
+          window.elementSdk && window.elementSdk.config
+            ? window.elementSdk.config
+            : defaultConfig;
+        applyConfig(currentConfig);
+      });
+    </script>
+    <script>
+      (function () {
+        function c() {
+          var b = a.contentDocument || a.contentWindow.document;
+          if (b) {
+            var d = b.createElement("script");
+            d.innerHTML =
+              "window.__CF$cv$params={r:'9e128ed4c767dcd1',t:'MTc3NDMyMjYxNC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";
+            b.getElementsByTagName("head")[0].appendChild(d);
+          }
+        }
+        if (document.body) {
+          var a = document.createElement("iframe");
+          a.height = 1;
+          a.width = 1;
+          a.style.position = "absolute";
+          a.style.top = 0;
+          a.style.left = 0;
+          a.style.border = "none";
+          a.style.visibility = "hidden";
+          document.body.appendChild(a);
+          if ("loading" !== document.readyState) c();
+          else if (window.addEventListener)
+            document.addEventListener("DOMContentLoaded", c);
+          else {
+            var e = document.onreadystatechange || function () {};
+            document.onreadystatechange = function (b) {
+              e(b);
+              "loading" !== document.readyState &&
+                ((document.onreadystatechange = e), c());
+            };
+          }
+        }
+      })();
+    </script>
+  </body>
+</html>
